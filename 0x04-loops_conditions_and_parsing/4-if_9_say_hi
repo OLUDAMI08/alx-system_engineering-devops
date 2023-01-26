@@ -3,7 +3,7 @@
 # it print "Hi" at the 9th iteration
 
 count = 0
-while [ $count 1e 10 ]
+while [ $count le 10 ]
 do
 	echo "Best School"
 	if [ $count -eq 9 ]
