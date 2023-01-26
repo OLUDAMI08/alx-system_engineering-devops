@@ -1,0 +1,9 @@
+#i/usr/bin/env bash
+# A script that print "Best School" 10 times using until loop
+
+count = o
+until [ $count -eq 10 ]
+do
+	echo "Best School"
+	(( count++ ))
+done
