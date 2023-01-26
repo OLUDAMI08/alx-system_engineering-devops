@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#A script that print "best school" 10 times
-# it print "Hi" at the 9th iteration
+#A script that print "best school" 10 times,it print "Hi" at the 9th iteration
 
 count=0
 
