@@ -2,7 +2,7 @@
 # A script that print "Best School 10 times using while loop
 
 i = 0
-while [ $i -1t 10 ]
+while [ $i -lt 10 ]
 do
 	echo "Best School"
 	(( i++ ))
