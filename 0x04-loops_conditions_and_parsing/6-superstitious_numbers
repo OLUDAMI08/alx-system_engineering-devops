@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#Display number from 1 to 20 with superstition
+
+i=0
+
+while [ $i -le 20 ]
+do
+	case $i in
+		4) echo "$i"
+		echo "bad luck from china"
+		;;
+		9) echo "$i"
+		echo "bad luck from japan"
+		;;
+		17) echo "$i"
+		echo "bad luck from italy"
+		;;
+		*) echo "$i"
+		;;
+esac
+	(( i++ ))
+done
