@@ -11,10 +11,10 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # Configure nginx to listen on port 80
-sudo ufw allow 'Nginx HTTP'
+ufw allow 'Nginx HTTP'
 
 # Creating sample page 
-echo "Hello World!" > /var/www/html/index.html 
+echo "Hello World!" > /var/www/html/index.html
 
 # Start Nginx
 sudo service nginx start
