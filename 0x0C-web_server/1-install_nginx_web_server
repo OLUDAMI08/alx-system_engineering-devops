@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
-# bash script that Installs Nginx with the following configurations:
-#    Listens on port 80.
-#    Returns a page containing "Hello World" when queried
-#    at the root with a curl GET request.
+# Bash script that configures a new Ubuntu machine to respect the requirements below
 
-# update and Install nginx
-sudo apt-get -y update
+# 	Install nginx on your web-01 server
+# 	Nginx should be listening on port 80
+#	Returns a page containing "Hello World" when queried
+#	in the root with a curl GET request.
+
+#  Update package list and install nginx
+sudo apt-get update
 sudo apt-get install -y nginx
 
-# configure Nginx to listen on port 80
- ufw allow 'Nginx HTTP'
+# Configure nginx to listen on port 80
+ufw allow 'Nginx HTTP'
 
-# Creat sample page
+# Creating sample page 
 echo "Hello World!" > /var/www/html/index.html
 
 # Start Nginx
-service nginx start
+sudo service nginx start
 
