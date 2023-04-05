@@ -18,3 +18,4 @@ echo "Hello World!" > /var/www/html/index.html
 
 # Start Nginx
 sudo service nginx start
+
