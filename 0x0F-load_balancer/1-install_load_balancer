@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Installs and configure HAproxy on the lb-01 server
-# using roundrobin algorithm
 
 # update and install haproxy
 sudo apt-get update
