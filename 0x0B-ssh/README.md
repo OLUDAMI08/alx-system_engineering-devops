@@ -15,7 +15,8 @@ The second line of all Bash scripts should be a comment explaining what is the s
 <code> sylvain@ubuntu$ ./0-use_a_private_key
 ubuntu@server01:~$ exit
 Connection to 8.8.8.8 closed.
-sylvain@ubuntu$ <code>
+sylvain@ubuntu$ 
+<code>
 1-create_ssh_key_pair - a Bash script that creates an RSA key pair
 
 Requirements:
