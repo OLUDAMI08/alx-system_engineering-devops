@@ -1,29 +1,31 @@
+#!/usr/bin/python3
+"""Accessing a REST API for todo lists of employees"""
+
 import requests
 import sys
 
-# Set up the base URL for the API
-BASE_URL = 'https://jsonplaceholder.typicode.com'
 
-# Get the employee ID from the command line arguments
-employee_id = sys.argv[1]
+if __name__ == '__main__':
+    employeeId = sys.argv[1]
+    baseUrl = "https://jsonplaceholder.typicode.com/users"
+    url = baseUrl + "/" + employeeId
 
-# Make a request to the API to get the employee information
-employee_response = requests.get('{}/users/{}'.format(BASE_URL, employee_id))
-employee_data = employee_response.json()
-employee_name = employee_data['name']
+    response = requests.get(url)
+    employeeName = response.json().get('name')
 
-# Make a request to the API to get the employee's TODO list
-todo_response = requests.get('{}/todos?userId={}'
-                             .format(BASE_URL, employee_id))
-todo_data = todo_response.json()
-total_tasks = len(todo_data)
+    todoUrl = url + "/todos"
+    response = requests.get(todoUrl)
+    tasks = response.json()
+    done = 0
+    done_tasks = []
 
-# Count the number of completed tasks
-completed_tasks = [task for task in todo_data if task['completed']]
-num_completed_tasks = len(completed_tasks)
+    for task in tasks:
+        if task.get('completed'):
+            done_tasks.append(task)
+            done += 1
 
-# Display the employee TODO list progress
-print('Employee {} is done with tasks({}/{}):'
-      .format(employee_name, num_completed_tasks, total_tasks))
-for task in completed_tasks:
-    print('\t {}'.format(task['title']))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employeeName, done, len(tasks)))
+
+    for task in done_tasks:
+        print("\t {}".format(task.get('title')))
