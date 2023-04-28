@@ -11,15 +11,14 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get("{}users/{}".format(url, user_id)).json()
     tasks = requests.get("{}users/{}/todos".format(url, user_id)).json()
-    data_list = [] 
+    data_list = []
     for task in tasks:
         data_dict = {
                     user_id: {"task": task.get("title"),
-                            "completed": task.get("completed"),
-                            "username": user.get("username")}
+                              "completed": task.get("completed"),
+                              "username": user.get("username")}
             }
         data_list.append(data_dict)
     # open a new JSON file in write mode
     with open("{}.json".format(user_id), "w", newline="") as file:
         json.dump(data_list, file)
-
